@@ -97,7 +97,20 @@ class LinkedList:
         new_node.next = temp.next
         temp.next = new_node
         self.length += 1
+        return True
+    
+    def remove(self,index):
+        if (index < 0 or index > self.length):
+            return None
         
+        prev = self.get(index - 1)
+        temp = prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
+    
+    
 my_linked_list = LinkedList(5);
 my_linked_list.append(9)
 my_linked_list.append(20)
@@ -108,7 +121,8 @@ my_linked_list.insert(2,1500)
 
 my_linked_list.print_list()
 
-
+my_linked_list.remove(2)
+my_linked_list.print_list()
 
 
 
