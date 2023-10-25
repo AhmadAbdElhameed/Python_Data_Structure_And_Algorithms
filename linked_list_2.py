@@ -76,6 +76,15 @@ class LinkedList:
             temp = temp.next
         return temp
             
+            
+    def set(self,index,value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+    
+    
 my_linked_list = LinkedList(5);
 my_linked_list.append(9)
 my_linked_list.append(20)
@@ -83,3 +92,15 @@ my_linked_list.append(30)
 
 
 print(my_linked_list.get(3))
+
+my_linked_list.set(3,1254)
+
+
+my_linked_list.print_list()
+
+
+
+
+
+
+
