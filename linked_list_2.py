@@ -28,10 +28,33 @@ class LinkedList:
             print(temp.value)
             temp = temp.next
         
+    def pop(self):
+        if self.length == 0:
+            return None
+    
+        temp = self.head
+        pre = self.head
+    
+        while (temp.next):
+            pre = temp
+            temp = temp.next
+    
+        self.tail = pre
+        self.tail.next = None
+    
+    
+    
         
 my_linked_list = LinkedList(5);
 
-my_linked_list.append(91)
+my_linked_list.append(11)
+my_linked_list.append(21)
+my_linked_list.append(31)
+my_linked_list.append(41)
+
 
 my_linked_list.print_list()
 
+my_linked_list.pop()
+
+my_linked_list.print_list()
